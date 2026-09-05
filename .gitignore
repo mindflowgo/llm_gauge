@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+src-tauri/target/
+
+# OS and editor files
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+.env
+.llm-gauge.json
+

@@ -1,0 +1,26 @@
+{
+  "name": "llm-quota",
+  "version": "1.0.0",
+  "description": "Cross-agent LLM Gauge",
+  "main": "cli.js",
+  "type": "module",
+  "bin": {
+    "llm-quota": "./cli.js"
+  },
+  "scripts": {
+    "cli": "node cli.js",
+    "cli:json": "node cli.js --json",
+    "cli:refresh": "node cli.js --refresh",
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "start": "./src-tauri/target/debug/llm-quota",
+    "open": "./src-tauri/target/debug/llm-quota"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4"
+  },
+  "keywords": ["llm", "quota", "antigravity", "zcode", "opencode", "tauri"],
+  "author": "Filipe Laborde, fil@rezox.com",
+  "license": "MIT"
+}

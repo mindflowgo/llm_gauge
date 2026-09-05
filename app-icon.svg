@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Top Rim Highlight -->
+    <linearGradient id="rim-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.01" />
+    </linearGradient>
+
+    <!-- Emerald Quota Gradient -->
+    <linearGradient id="emerald-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="40%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Grey Depleted Quota Gradient -->
+    <linearGradient id="grey-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <!-- Capsule Clip Path -->
+    <clipPath id="capsule-clip">
+      <rect x="702" y="367" width="104" height="290" rx="52" ry="52" />
+    </clipPath>
+
+    <!-- Drop Shadow Filter for macOS Squircle -->
+    <filter id="squircle-shadow" x="-10%" y="-8%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.55" />
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+
+    <!-- Soft Drop Shadow for Logo Elements -->
+    <filter id="element-shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base with Shadow -->
+  <g filter="url(#squircle-shadow)">
+    <rect x="100" y="100" width="824" height="824" rx="185" ry="185" fill="#14151b" />
+    <!-- Border Rim -->
+    <rect x="101" y="101" width="822" height="822" rx="184" ry="184" fill="none" stroke="url(#rim-grad)" stroke-width="2.5" />
+  </g>
+
+  <!-- Logo Group with subtle shadow -->
+  <g filter="url(#element-shadow)">
+    <!-- 1. AI Sparkle on Left (cx=426, cy=512, r=220, inward=16) -->
+    <!-- Dark Backing Stroke -->
+    <path d="M 426 292 Q 442 496 646 512 Q 442 528 426 732 Q 410 528 206 512 Q 410 496 426 292 Z"
+          fill="none" stroke="#08080b" stroke-width="22" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- Pure Brilliant White Fill -->
+    <path d="M 426 292 Q 442 496 646 512 Q 442 528 426 732 Q 410 528 206 512 Q 410 496 426 292 Z"
+          fill="#ffffff" />
+
+    <!-- 2. Vertical Quota Gauge Capsule on Right (x=702, y=367, w=104, h=290, rx=52) -->
+    <!-- Dark Backing Stroke -->
+    <rect x="702" y="367" width="104" height="290" rx="52" ry="52"
+          fill="none" stroke="#08080b" stroke-width="22" stroke-linejoin="round" />
+
+    <!-- Capsule Fill: Top 27% Slate Grey + Bottom 73% Emerald -->
+    <g clip-path="url(#capsule-clip)">
+      <!-- Top Depleted Quota (Grey) -->
+      <rect x="702" y="367" width="104" height="290" fill="url(#grey-grad)" />
+
+      <!-- Bottom Filled Quota (73% fill: height 212px from bottom) -->
+      <rect x="702" y="445" width="104" height="212" fill="url(#emerald-grad)" />
+
+      <!-- Divider line between grey and emerald -->
+      <line x1="702" y1="445" x2="806" y2="445" stroke="#08080b" stroke-width="3" />
+
+      <!-- Subtle inner glass highlight reflection line on gauge -->
+      <rect x="712" y="380" width="12" height="264" rx="6" fill="#ffffff" fill-opacity="0.25" />
+    </g>
+
+    <!-- Subtle inner stroke around capsule for crisp definition -->
+    <rect x="702" y="367" width="104" height="290" rx="52" ry="52"
+          fill="none" stroke="#08080b" stroke-width="6" />
+  </g>
+</svg>
